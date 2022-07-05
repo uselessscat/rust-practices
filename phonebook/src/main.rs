@@ -58,7 +58,10 @@ fn list_contacts(contacts: &Vec<Contact>) {
     println!("Contacts in the list:");
 
     for (i, contact) in contacts.iter().enumerate() {
-        println!("{}: Name : {}\n   Phone: {}", i, contact.name, contact.phone);
+        println!(
+            "{}: Name : {}\n   Phone: {}",
+            i, contact.name, contact.phone
+        );
     }
 
     print!("\n")
