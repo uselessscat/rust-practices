@@ -1,3 +1,10 @@
+struct Color(i32, i32, i32);
+struct Person {
+    name: String,
+    last_name: String,
+    age: i8,
+}
+
 fn main() {
     let a: i32 = 5;
     let b: i32 = 18;
@@ -45,4 +52,31 @@ fn main() {
     println!("array1 {}", mi_array[1]);
     println!("array2 {}", mi_array2[4]);
     println!("array2 len {}", mi_array2.len());
+
+    let person1 = Person {
+        name: String::from("Robert"),
+        last_name: String::from("Callaghan"),
+        age: 30,
+    };
+
+    println!("name {}", person1.name);
+
+    let person2 = Person {
+        name: String::from("Peter"),
+        ..person1
+    };
+
+    // this should return error if we use person1.name because of ownership
+    println!(
+        "name {} last_name {} age {}",
+        person2.name, person2.last_name, person2.age
+    );
+
+    println!("test copy trait {}", person1.age);
+
+    let color = Color(123, 200, 190);
+
+    let Color(r, g, b) = color;
+    println!("r {} g {} b {}", r, g, b);
+    println!("r {} g {} b {}", color.0, color.1, color.2);
 }
