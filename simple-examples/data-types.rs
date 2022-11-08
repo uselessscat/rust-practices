@@ -53,6 +53,7 @@ fn main() {
     println!("array2 {}", mi_array2[4]);
     println!("array2 len {}", mi_array2.len());
 
+    // struct
     let person1 = Person {
         name: String::from("Robert"),
         last_name: String::from("Callaghan"),
@@ -74,6 +75,7 @@ fn main() {
 
     println!("test copy trait {}", person1.age);
 
+    // tuple struct
     let color = Color(123, 200, 190);
 
     let Color(r, g, b) = color;
