@@ -29,4 +29,12 @@ fn main(){
     let s2 = String::from("tac");
     let s3 = String::from("toe");
     let s = format!("{}-{}-{}", s1, s2, s3);
+
+    // iterar sobre strings 
+    for c in "Зд".chars() {
+        println!("{}", c);
+    }
+    for b in "Зд".bytes() {
+        println!("{}", b);
+    }
 }
