@@ -52,6 +52,5 @@ fn main() {
     let p3 = both_float.mixup(integer_and_float);
 
     println!("p3.x = {}, p3.y = {}", p3.x, p3.y);
-
 }
 

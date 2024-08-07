@@ -29,6 +29,16 @@ enum Message {
     ChangeColor(i32, i32, i32),
 }
 
+#[derive(Debug)]
+struct MyStruct {
+    message: String,
+}
+
+#[derive(Debug)]
+enum StructContainer {
+    Container(MyStruct),
+}
+
 fn main (){
     let _four = IpAddrKind::V4;
     let _six = IpAddrKind::V6;
@@ -59,4 +69,12 @@ fn main (){
     let _some_char = Some('e');
 
     let _absent_number: Option<i32> = None;
+
+    let my_struct = MyStruct {
+        message: String::from("Hello, world!"),
+    };
+
+    let message = StructContainer::Container(my_struct);
+
+    println!("{:?}", message);
 }

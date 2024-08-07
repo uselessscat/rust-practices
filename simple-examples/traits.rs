@@ -1,3 +1,5 @@
+use std::fmt::{Display, Debug};
+
 pub trait Summary {
     fn summarize_author(&self) -> String;
 
@@ -93,10 +95,10 @@ pub fn notify5(item: &(impl Summary + Display)) {}
 pub fn notify6<T: Summary + Display>(item: &T) {}
 
 // a function can have multiple traits, an alternative syntax is
-fn some_function<T: Display + Clone, U: Clone + Debug>(t: &T, u: &U) -> i32 {}
-fn some_function<T, U>(t: &T, u: &U) -> i32
+fn some_function1(t: &(impl Display + Clone), u: &(impl Clone + Debug)) -> i32 { 0 }
+fn some_function2<T: Display + Clone, U: Clone + Debug>(t: &T, u: &U) -> i32 { 0 }
+fn some_function3<T, U>(t: &T, u: &U) -> i32
 where
     T: Display + Clone,
     U: Clone + Debug,
-{
-}
+{ 0 }
